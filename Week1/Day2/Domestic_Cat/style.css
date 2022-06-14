@@ -1,0 +1,41 @@
+#domesticCat {
+border-bottom: solid black;
+}
+span {
+    background-color: yellow;
+}
+ol {
+    list-style: upper-roman;
+}
+img {
+    width: 40%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: #AB284E;
+    border-style:solid;
+}
+#catSenses {
+    margin-left: 5%;
+}
+a {
+    color: blue;
+}
+table{
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+caption {
+    border: red;
+    border-style: solid;
+    padding-left: auto;
+    padding-right: auto;
+    color: red;
+    margin-bottom: 20px;
+}
+th, td {
+    border: black 1px solid;
+    border-collapse: collapse;
+}   
