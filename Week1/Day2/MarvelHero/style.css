@@ -1,0 +1,41 @@
+body{
+    margin-top: 0;
+    margin-left: 0;
+    background-image: url(./img/avengers-endgame-iron-man-infinity-stones-uhdpaper.com-4K-161.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+}
+img {
+    height: 40px;
+    width: 60px;
+    position: absolute;
+}
+nav {
+    height: 40px;
+    width: 100vw;
+    background-color: black;
+    position: relative;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    margin-right: 10px;
+    right: 10px;
+    padding: 0;
+    position: absolute;
+}
+li {
+    display: inline;
+    color: rgb(255, 0, 0);
+    margin: 0 5px 0 5px;
+}
+.container{
+    position: absolute;
+    width: 30vw;
+    bottom: 20px;
+    left: 20px;
+    color:rgb(255, 0, 0);
+    margin: 5px;
+}
