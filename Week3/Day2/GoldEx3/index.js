@@ -1,0 +1,5 @@
+let firstNumber = prompt("Input first number")
+let action = prompt("Input action")
+let secondNumber = prompt("Input second number")
+let answer = parseInt(firstNumber) + parseInt(secondNumber)
+console.log(alert(answer))
