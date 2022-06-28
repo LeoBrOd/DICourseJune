@@ -13,13 +13,6 @@ true != true // false
 
 //Exercise2
 let array = []
-function sum(){
-    for (i=num; i++)
-    if(i % divisor === 0)
-    {array.push(i)}
-    return i}
-isDivisible(23)
-console.log(array)
 console.log(array.reduce((a, b) => a + b, 0))
 
 // Exercise3
@@ -35,8 +28,29 @@ for (let i = 0; i < sentences.length; i++) {
 let num = parseInt(prompt("Choose your number..."))
 let str = "Boom"
 let letter = "o"
-switch(num) {
-case num>2: str.replace("0")
+switch(true) {
+case (num>2 && num%2 === 0 && num% 5 === 0): 
+str.replace("oo", (letter.repeat(num))).toUpperCase()+"!"
+break
+case (num>2 && num%2 === 0):
+str.replace("oo", (letter.repeat(num)))+"!"
+break
+case (num>2 && num% 5 === 0): 
+str.replace("oo", (letter.repeat(num))).toUpperCase()
+break
+case (num>2): 
+str.replace("oo", (letter.repeat(num)))
 break
 default: str
 }
+
+
+[str.slice(0, 1), letter.repeat(num), str.slice(2)].join('')
+num>2 
+? str.replace("oo", (letter.repeat(num)))
+: str
+num% 2 === 0 
+? str+"!"
+: num% 5 === 0
+? str.toUpperCase()
+: str.toUpperCase()+"!"
