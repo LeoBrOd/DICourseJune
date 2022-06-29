@@ -29,19 +29,19 @@ let num = parseInt(prompt("Choose your number..."))
 let str = "Boom"
 let letter = "o"
 switch(true) {
-case (num>2 && num%2 === 0 && num% 5 === 0): 
-str.replace("oo", (letter.repeat(num))).toUpperCase()+"!"
-break
-case (num>2 && num%2 === 0):
-str.replace("oo", (letter.repeat(num)))+"!"
-break
-case (num>2 && num% 5 === 0): 
-str.replace("oo", (letter.repeat(num))).toUpperCase()
-break
-case (num>2): 
-str.replace("oo", (letter.repeat(num)))
-break
-default: str
+    case (num>2 && num%2 === 0 && num% 5 === 0): 
+        str.replace("oo", (letter.repeat(num))).toUpperCase()+"!"
+    break
+    case (num>2 && num%2 === 0):
+        str.replace("oo", (letter.repeat(num)))+"!"
+    break
+    case (num>2 && num% 5 === 0): 
+        str.replace("oo", (letter.repeat(num))).toUpperCase()
+    break
+    case (num>2): 
+        str.replace("oo", (letter.repeat(num)))
+    break
+    default: str
 }
 
 
