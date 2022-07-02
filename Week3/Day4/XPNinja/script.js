@@ -1,6 +1,6 @@
 //Exercise 1
-const fBday = parseInt(prompt("Choose 1st person birth year..."))
-const sBday = parseInt(prompt("Choose 2nd person birth year..."))
+let fBday = parseInt(prompt("Choose 1st person birth year..."))
+let sBday = parseInt(prompt("Choose 2nd person birth year..."))
 let fAge = (year)=> fBday-year
 let sAge = (year)=> sBday-year
 if (fBday<sBday) { 
