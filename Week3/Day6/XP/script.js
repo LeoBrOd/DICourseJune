@@ -9,6 +9,26 @@ console.log(people.indexOf("Foo"))
 let last = people[(people.length)-1]
 console.log(last);
 
+//Exercise 1 in class
+// let people = ["Greg", "Mary", "Devon", "James"];
+// let toFind = "Greg"
+// let positionToFind = people.indexOf(toFind)
+// people.splice(positionToFind, 1)
+
+// let toFind = "James"
+// let positionToFind = people.indexOf(toFind)
+// people.splice(positionToFind, 1, "Jason")
+
+let arrNotToInclude = ["Mary", "Leo"]
+let copy = people.splice()
+for (let index = 0; index < copy.length; index++) {
+    const element = copy[index];
+    if (arrNotToInclude.includes(element)) {
+        
+    }
+}
+
+
 //Exercise 1 Part 2
 people.forEach(i => 
     console.log(i)
