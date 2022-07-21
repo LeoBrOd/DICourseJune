@@ -23,20 +23,28 @@ const gameInfo = [
       score: 1,
       items: ["book", "pen"]
     },
-   ];;
+   ];
+
 let userNames =[]
    gameInfo.forEach( e => {
     userNames.push(`${e.username}!`)
    })
    console.log(userNames);
 
+// let viners =[]
+//    gameInfo.forEach( e => {
+//     e.score>5
+//     ?viners.push(`${e.username}!`)
+//     :0
+//    })
+//    console.log(viners);
+
 let viners =[]
    gameInfo.forEach( e => {
-    e.score>5
-    ?viners.push(`${e.username}!`)
-    :0
+    e.score>5 && viners.push(`${e.username}!`)
    })
-   console.log(viners);
+   console.log(viners)
+
 let totalScore = 0
    gameInfo.forEach( e => {
     totalScore+=e.score
