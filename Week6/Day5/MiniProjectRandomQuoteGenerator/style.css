@@ -1,0 +1,25 @@
+.card{
+    margin: 25px;
+    background-color: #D8CFCC;
+    padding: 20px;
+}
+body{
+    background-color: #B09E99;
+}
+#quote{
+    color: #999B9D;
+}
+#author{
+    display: flex;
+    justify-content:flex-end;
+    color:#67B6AC ;
+}
+
+#generateButton{
+    width: fit-content;
+    background-color: #64B6AC;
+    color: white;
+    border: #6CA5E6 solid 5px;
+    display: flex;
+    justify-content: center;
+}

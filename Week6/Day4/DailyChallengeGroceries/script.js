@@ -14,15 +14,18 @@ let displayGroceries = () => {
     groceries.fruits.forEach(e => {
         console.log(e);
     });
+    //groceries.fruits.forEach(console.log)
 }
-displayGroceries()
+//displayGroceries()
 
 let cloneGroceries =() => {
 let user = client
 client = 'Betty'
+console.log(user);
 let shopping = groceries;
 groceries.totalPrice = "35$";
 groceries.other.payed = false;
+console.log(shopping);
 }
 
 cloneGroceries()
