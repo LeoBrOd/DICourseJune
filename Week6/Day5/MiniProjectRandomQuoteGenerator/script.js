@@ -8,21 +8,21 @@ const arr = [
     author: "William James",
     quote:
       "Be not afraid of life. Believe that life is worth living, and your belief will help create the fact.",
-    likes: "",
+    likes: 0,
   },
   {
     id: 1,
     author: "Will Rogers",
     quote:
       "Even if you are on the right track, you will get run over if you just sit there.",
-    likes: "",
+    likes: 0,
   },
   {
     id: 2,
     author: "Winston Churchill",
     quote:
       "Courage is the first of human qualities because it is the quality which guarantees all others.",
-    likes: "",
+    likes: 0,
   },
 ];
 
@@ -60,7 +60,7 @@ submit.addEventListener("submit", (e) => {
     document.getElementById("authorInput").value;
   newObjectFromInput.quote =
     document.getElementById("quoteInput").value;
-  newObjectFromInput.likes = "";
+  newObjectFromInput.likes = 0;
   let newObjectToInput = Object.assign(
     {},
     newObjectFromInput
