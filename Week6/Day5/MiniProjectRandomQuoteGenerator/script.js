@@ -1,7 +1,3 @@
-// generateButton = document.getElementById(
-//   "generateButton"
-// );
-
 const arr = [
   {
     id: 0,
@@ -74,18 +70,19 @@ numberPlus.addEventListener("click", (e) => {
   buttonPlus = document.getElementById(
     "resultToPrint"
   );
+  document.getElementById(
+    "resultToPrint"
+  ).innerHTML = "";
+  let resultToPrint = "";
   arr.forEach((element) => {
     let lengthOfString = element.quote.length;
-    let resultToPrint = `Quote #${
+    resultToPrint = `Quote #${
       element.id + 1
     } is ${lengthOfString} characters long`;
-    document.getElementById(
-      "resultToPrint"
-    ).innerHTML = resultToPrint;
-    // newdiv = document.createElement("div");
-    // newdiv.setAttribute("id", "div_demo");
-    // newdiv.innerHTML = resultToPrint;
-    // buttonPlus.appendChild(newdiv);
+    newdiv = document.createElement("div");
+    newdiv.setAttribute("id", "div_demo");
+    newdiv.innerHTML = resultToPrint;
+    buttonPlus.appendChild(newdiv);
   });
 });
 
@@ -93,23 +90,22 @@ numberMinus.addEventListener("click", (e) => {
   buttonMinus = document.getElementById(
     "resultToPrint"
   );
+  document.getElementById(
+    "resultToPrint"
+  ).innerHTML = "";
   arr.forEach((element) => {
     let cleanString = element.quote.replace(
       /\s/g,
       ""
     );
-    //console.log(cleanString);
     let lengthOfStringMinus = cleanString.length;
     let resultToPrint = `Quote #${
       element.id + 1
     } is ${lengthOfStringMinus} characters long`;
-    document.getElementById(
-      "resultToPrint"
-    ).innerHTML = resultToPrint;
-    // newdiv = document.createElement("div");
-    // newdiv.setAttribute("id", "div_demo");
-    // newdiv.innerHTML = resultToPrint;
-    // buttonMinus.appendChild(newdiv);
+    newdiv = document.createElement("div");
+    newdiv.setAttribute("id", "div_demo");
+    newdiv.innerHTML = resultToPrint;
+    buttonMinus.appendChild(newdiv);
   });
 });
 
@@ -117,19 +113,18 @@ numberWords.addEventListener("click", (e) => {
   buttonWords = document.getElementById(
     "resultToPrint"
   );
+  document.getElementById(
+    "resultToPrint"
+  ).innerHTML = "";
   arr.forEach((element) => {
     let cleanString = element.quote.split(" ");
-    //console.log(cleanString);
     let lengthOfStringWords = cleanString.length;
     let resultToPrint = `Quote #${
       element.id + 1
     } is ${lengthOfStringWords} words long`;
-    document.getElementById(
-      "resultToPrint"
-    ).innerHTML = resultToPrint;
-    // newdiv = document.createElement("div");
-    // newdiv.setAttribute("id", "div_demo");
-    // newdiv.innerHTML = resultToPrint;
-    // buttonWords.appendChild(newdiv);
+    newdiv = document.createElement("div");
+    newdiv.setAttribute("id", "div_demo");
+    newdiv.innerHTML = resultToPrint;
+    buttonWords.appendChild(newdiv);
   });
 });
