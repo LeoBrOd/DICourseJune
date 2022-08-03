@@ -152,3 +152,30 @@ function totalDigit(num){
 3
 
 console.log((4*4*3*3)+3+4+(3*3)+3);
+
+
+let users = {
+    user1:{
+      age:44,
+      name:'picard'
+    },
+    user2: {
+      age:12,
+      name: 'sisko'
+    },
+    user3: {
+      age:109,
+      name: 'janeway'
+    }
+  }
+  
+//   filter for all users older than 30
+//   and store the data in an Array
+//   use Array.filter Array.map
+//   [
+//     {id:'user1',age:44, name:'picard'},
+//     {id:'user3',age:109, name:'janeway'},
+//   ]
+  
+
+
