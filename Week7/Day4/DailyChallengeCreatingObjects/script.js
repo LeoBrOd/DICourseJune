@@ -32,12 +32,18 @@ class Video {
 
 let videoList = [
   ["Lord of the rings", "John", 9288],
-  ["Harry Potter and the Philosopher's Stone",
+  [
+    "Harry Potter and the Philosopher's Stone",
     "Fred",
-    8352],
-  ["John Wick", "Igor",5076],
-  ["Everything Everywhere All at Once","Peter",7884],
-  ["Top Gun: Maverick", "Alice",7560],
+    8352,
+  ],
+  ["John Wick", "Igor", 5076],
+  [
+    "Everything Everywhere All at Once",
+    "Peter",
+    7884,
+  ],
+  ["Top Gun: Maverick", "Alice", 7560],
 ];
 
 // let videoList = [
@@ -55,7 +61,14 @@ let videoList = [
 //     console.log(newVideo);
 // });
 
+// for (let i = 0; i < videoList.length; i++) {
+//     let newVideo = new Video (videoList[i][0],videoList[i][1],videoList[i][2]);
+//     console.log(newVideo);
+// }
+
+let arr = [];
 for (let i = 0; i < videoList.length; i++) {
-    let newVideo = new Video (videoList[i]);
-    console.log(newVideo);
+  let newVideo = new Video(...videoList[i]);
+  arr.push(newVideo);
 }
+console.log(arr);

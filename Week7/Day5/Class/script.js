@@ -8,15 +8,25 @@
 // "We promptly judged antique ivory buckles for the prize"
 
 const pangram = (s) => {
-    let alphabet = "abcdefghijklmnopqrstuvyxyz";
-    let lowercase = s.toLowerCase().split(' ').join('');
-    for(let i = 0; i < alphabet.length; i++){
-      if(lowercase.indexOf(alphabet[i]) === -1){
-        return 'not pangram' // false
-      }
+  let alphabet = "abcdefghijklmnopqrstuvyxyz";
+  let lowercase = s
+    .toLowerCase()
+    .split(" ")
+    .join("");
+  for (let i = 0; i < alphabet.length; i++) {
+    if (lowercase.indexOf(alphabet[i]) === -1) {
+      return "not pangram"; // false
     }
-    return 'pangram' // true
   }
-console.log(pangram("The quick brown fox jumps over the lazy dog"));
-console.log(pangram("We promptly judged antique ivory buckles for the prize"));
-
+  return "pangram"; // true
+};
+console.log(
+  pangram(
+    "The quick brown fox jumps over the lazy dog"
+  )
+);
+console.log(
+  pangram(
+    "We promptly judged antique ivory buckles for the prize"
+  )
+);

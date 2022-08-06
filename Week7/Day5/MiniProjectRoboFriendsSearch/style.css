@@ -1,0 +1,16 @@
+.card{
+    background-color: #4FC1C5;
+    background-image: url(./img/card-pattern.png);
+}
+body{
+    background-image: url(./img/color-circuit-board-texture-for-banner-abstract-technology-background-electronic-motherboard-connection-lines-and-signals_257312-1494.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color:#6A58C9;
+}
+.navbar{
+    background-color: #6adf82;                                          
+}
+.navbar-brand{
+    font-family: 'SEGA LOGO FONT', sans-serif;
+}
