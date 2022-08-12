@@ -79,6 +79,13 @@ class Labrador extends Dog {
 
 // Exercise 6 : Challenges
 
+// Create a class Animal with the attributes name, type and color. The type is the animal type, for example: dog, cat, dolphin ect …
+
+// Create a class Mamal that extends from the Animal class. Inside the class, add a method called sound(). This method takes a parameter: the sound the animal makes, and returns the details of the animal (name, type and color) as well as the sound it makes.
+
+// Create a farmerCow object that is an instance of the class Mamal. The object accepts a name, a type and a color and calls the sound method that “moos” her information.
+// For example: Moooo I'm a cow, named Lily and I'm brown and white
+
 // [2] === [2] it will give us false
 // {} === {} it will give us false
 
@@ -91,3 +98,34 @@ object1.number = 4;
 console.log(object2.number); // 4 cause we changed object1
 console.log(object3.number); // 4 cause we changed object1
 console.log(object4.number); // 5 it has it's own value of number, and it's different scope
+
+class Animal {
+  constructor(nameOfTheAnimal, type, color) {
+    this.nameOfTheAnimal = nameOfTheAnimal;
+    this.type = type;
+    this.color = color;
+  }
+  sound() {
+    return ` I'm a ${this.type}, named ${this.nameOfTheAnimal} and I'm ${this.color}`;
+  }
+}
+class Mamal extends Animal {
+  constructor(
+    nameOfTheAnimal,
+    type,
+    color,
+    soundOfTheAnimal
+  ) {
+    super(nameOfTheAnimal, type, color);
+    this.soundOfTheAnimal = soundOfTheAnimal;
+  }
+  sound(soundOfTheAnimal) {
+    return `${soundOfTheAnimal} I'm a ${this.type}, named ${this.nameOfTheAnimal} and I'm ${this.color}`;
+  }
+}
+let cowLily = new Mamal(
+  "Lily",
+  "cow",
+  "brown and white"
+);
+console.log(cowLily.sound("moooo"));
