@@ -1,0 +1,27 @@
+body{
+    background-color: #091F43;
+}
+#newCard{
+    padding: 10px;
+    margin: 10px;
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+    border-radius: 10px;
+}
+#root{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+#cityName{
+    background-color: #091F43;
+    color: white;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: white;
+}
+#errorMessage{
+    color: red;
+    visibility: hidden;
+}
