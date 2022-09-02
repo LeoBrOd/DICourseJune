@@ -1,20 +1,30 @@
---1.1
-SELECT * from items
-order by price
+-- ALTER TABLE customers
+--   RENAME COLUMN id TO customer_id;
+  
+-- ALTER TABLE items
+--   RENAME COLUMN id TO item_id;
 
---1.2
-SELECT * from items
-where price >=80
-order by price DESC
+-- Exercise 3 : Items And Customers
+create TABLE purchases (
+id serial primary key,
+	customer_id integer,
+	item_id integer,
+	quantity_purchased integer
+)
 
---1.3
-SELECT firstname, lastname from customers
-order by firstname
-limit 3
+ALTER TABLE purchases 
+ADD CONSTRAINT fk_customer_id 
+FOREIGN KEY (customer_id) 
+REFERENCES customers (customer_id)	
 
---1.4
-SELECT  lastname from customers
-order by lastname desc
+ALTER TABLE purchases 
+ADD CONSTRAINT fk_item_id 
+FOREIGN KEY (item_id) 
+REFERENCES items(item_id)	
+
+
+
+
 
 
 

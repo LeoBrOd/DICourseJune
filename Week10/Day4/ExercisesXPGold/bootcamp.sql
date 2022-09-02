@@ -51,8 +51,8 @@ where math_grade > 83
 insert into students
 values (8,'Omer', 'Simpson', '1980-10-03', 70)
 
---7   !!  didn`t finish !!
-select first_name, last_name from students
+--7  
+select first_name, count (1) from students group by first_name
 
 --SUM
 select sum (math_grade) from students
