@@ -6,33 +6,26 @@ class Events extends React.Component {
     this.state = {
       isToggleOn: true,
     };
+    this.handleClick =
+      this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState((prevState) => ({
+      isToggleOn: !prevState.isToggleOn,
+    }));
   }
 
   render() {
     const clickMe = () => {
       alert("I was clicked");
     };
-    const input =
-      document.getElementById("input");
-    const btn = document.getElementById("on_off");
     const handleKeyPress = (event) => {
-      if (event.key == "Enter") {
+      if (event.key === "Enter") {
         alert(
           `The Enter key was pressed, your input is: ${event.target.value}`
         );
       }
-    };
-    const onOff = () => {
-      if (this.state.isToggleOn) {
-        this.state.isToggleOn = false;
-        btn.textContent = "OFF";
-        console.log(btn.textContent);
-      } else {
-        this.state.isToggleOn = true;
-        btn.textContent = "ON";
-        console.log(btn.textContent);
-      }
-      console.log(this.state.isToggleOn);
     };
     return (
       <>
@@ -45,8 +38,11 @@ class Events extends React.Component {
           placeholder="Press the ENTER key!"
           onKeyPress={handleKeyPress}
         />
-        <button id="on_off" onClick={onOff}>
-          on/off
+        <button
+          id="switcher"
+          onClick={this.handleClick}
+        >
+          {this.state.isToggleOn ? "ON" : "OFF"}
         </button>
       </>
     );

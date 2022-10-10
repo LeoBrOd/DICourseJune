@@ -1,6 +1,9 @@
-import "./App.css";
-import Car from "./components/Car";
 import React from "react";
+import Car from "./components/Car";
+import Events from "./components/Events";
+import Phone from "./components/Phone";
+import Color from "./components/Color";
+import "./App.css";
 
 class App extends React.Component {
   // constructor() {
@@ -18,8 +21,10 @@ class App extends React.Component {
             name={carinfo.name}
             model={carinfo.model}
           />
+          <Events />
+          <Phone />
+          <Color />
         </header>
-        <div><button onClick={this.getStores}>Click me</button></div>
       </div>
     );
   }

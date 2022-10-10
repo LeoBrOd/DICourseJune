@@ -14,7 +14,7 @@ class Car extends React.Component {
         <header>
           <h1>
             This car is {this.state.color}{" "}
-            {this.props.model}
+            {this.props.name} {this.props.model}
           </h1>
         </header>
         <div>
