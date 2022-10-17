@@ -31,5 +31,15 @@ app.post("/api/world", (req, res) => {
   const inputText = req.body.inputText;
   const outputText = `I received your POST request. This is what you sent me: ${inputText}`;
   console.log(req.body);
-  res.send({ outputText });
+  res.json({ outputText });
 });
+
+// app.get("/api/world", (req, res) => {
+//   const inputText = req.body.inputText;
+//   let outputText;
+//   if (inputText !== "") {
+//     return (outputText = `I received your POST request. This is what you sent me: ${inputText}`);
+//   }
+//   console.log(req.body);
+//   res.send({ outputText });
+// });

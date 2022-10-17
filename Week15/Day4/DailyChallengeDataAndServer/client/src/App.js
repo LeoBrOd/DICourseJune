@@ -6,7 +6,7 @@ class App extends React.Component {
     super();
     this.state = {
       message: "",
-      input: "",
+      output: "",
     };
   }
 
@@ -25,21 +25,6 @@ class App extends React.Component {
       }
     };
     fetchData();
-    const fetchInput = async () => {
-      try {
-        const response = await fetch(
-          "http://localhost:8000/api/world"
-        );
-        const data = await response.json();
-        console.log(data.outputText);
-        this.setState({
-          input: data.inputText,
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchInput();
   }
 
   // async componentDidMount() {
@@ -66,6 +51,24 @@ class App extends React.Component {
   // .catch((err) => console.error(err));
   // }
 
+  // getFromPost = (e) => {
+  //   e.preventDefault();
+  //   const fetchInput = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         "http://localhost:8000/api/world"
+  //       );
+  //       const data = await response.json();
+  //       this.setState({
+  //         output: data.outputText,
+  //       });
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   fetchInput();
+  // };
+
   render() {
     return (
       <div className="App">
@@ -88,7 +91,7 @@ class App extends React.Component {
               />
             </form>
           </div>
-          <h1>{this.state.input}</h1>
+          <h1>{this.state.output}</h1>
         </header>
       </div>
     );
