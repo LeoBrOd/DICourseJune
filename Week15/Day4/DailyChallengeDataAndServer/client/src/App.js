@@ -7,6 +7,7 @@ class App extends React.Component {
     this.state = {
       message: "",
       output: "",
+      input: "",
     };
   }
 
@@ -27,6 +28,26 @@ class App extends React.Component {
     fetchData();
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    fetch("http://localhost:8000/api/world", {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        inputText: this.state.input,
+      }),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        this.setState({
+          output: response.outputText,
+        });
+      });
+  };
   // async componentDidMount() {
   //   const res = await fetch(
   //     "http://localhost:8000/api/hello"
@@ -69,6 +90,10 @@ class App extends React.Component {
   //   fetchInput();
   // };
 
+  handleChange = (e) => {
+    this.setState({ input: e.target.value });
+  };
+
   render() {
     return (
       <div className="App">
@@ -76,11 +101,9 @@ class App extends React.Component {
           <h1>{this.state.message}</h1>
           <div className="">
             <h1>Post to Server:</h1>
-            <form
-              method="POST"
-              action="http://localhost:8000/api/world"
-            >
+            <form onSubmit={this.handleSubmit}>
               <input
+                onChange={this.handleChange}
                 name="inputText"
                 placeholder="Input your text"
                 type="text"

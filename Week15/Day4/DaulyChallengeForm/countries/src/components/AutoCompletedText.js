@@ -11,11 +11,13 @@ class AutoCompletedText extends React.Component {
   }
 
   render() {
-    const filter = Countries.map((country) => {
-      return Countries[i].includes(
-        this.state.text.toLowerCase
+    const filter = (e) => {
+      let search = e.target.value;
+      const suggestions = Countries.map((i) =>
+        i.includes(search.toLowerCase())
       );
-    });
+      console.log(suggestions);
+    };
     return (
       <>
         <input type="text" onChange={filter} />

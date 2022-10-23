@@ -30,7 +30,7 @@ app.get("/api/hello", (req, res) => {
 app.post("/api/world", (req, res) => {
   const inputText = req.body.inputText;
   const outputText = `I received your POST request. This is what you sent me: ${inputText}`;
-  console.log(req.body);
+  console.log(req.body.inputText);
   res.json({ outputText });
 });
 
