@@ -10,18 +10,26 @@ class AutoCompletedText extends React.Component {
     };
   }
 
+  handleChange = (e, counrty) => {
+    const searchWord = e.target.value;
+    function filterCountries(country) {
+      return country.toLowerCase().includes("a");
+    }
+  };
+
   render() {
-    const filter = (e) => {
-      let search = e.target.value;
-      const suggestions = Countries.map((i) =>
-        i.includes(search.toLowerCase())
-      );
-      console.log(suggestions);
-    };
     return (
-      <>
-        <input type="text" onChange={filter} />
-      </>
+      <div>
+        <input
+          type="text"
+          onChange={this.handleChange}
+        />
+        {/* {Countries.map((item, i) => {
+          return <p key={i}>{Countries[i]}</p>;
+        })} */}
+        <p>{Countries}</p>
+        <p>{this.state.text}</p>
+      </div>
     );
   }
 }
