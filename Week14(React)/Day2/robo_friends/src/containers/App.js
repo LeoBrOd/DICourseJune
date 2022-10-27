@@ -6,11 +6,17 @@ import SearchBox from "../components/SearchBox";
 import Scroll from "../components/Scroll";
 import ErrorBoundary from "../components/ErrorBoundary";
 // import { robots } from "./components/robots";
-import { setSearchfield } from "../actions";
+import {
+  requestRobots,
+  setSearchfield,
+} from "../actions";
 
 const mapStateToProps = (state) => {
   return {
-    searchField: state.searchField,
+    searchField: state.searchRobots.searchField,
+    robots: state.requestRobots.robots,
+    isPending: state.requestRobots.isPending,
+    error: state.requestRobots.error,
   };
 };
 
@@ -20,26 +26,28 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(
         setSearchfield(event.target.value)
       ),
+    onRequestRobots: () =>
+      requestRobots(dispatch(requestRobots())),
   };
 };
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      // robots: robots,
-      robots: [],
-    };
-  }
-
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     // robots: robots,
+  //     robots: [],
+  //   };
+  // }
   componentDidMount() {
-    fetch(
-      "http://jsonplaceholder.typicode.com/users"
-    )
-      .then((res) => res.json())
-      .then((users) =>
-        this.setState({ robots: users })
-      );
+    //   fetch(
+    //     "http://jsonplaceholder.typicode.com/users"
+    //   )
+    //     .then((res) => res.json())
+    //     .then((users) =>
+    //       this.setState({ robots: users })
+    //     );
+    this.props.onRequestRobots();
   }
 
   // onSearchChange = (event) => {
@@ -48,10 +56,14 @@ class App extends Component {
   //   });
   // };
   render() {
-    const { robots } = this.state;
+    // const { robots } = this.state;
     // const { robots, searchField } = this.state;
-    const { searchField, onSearchChange } =
-      this.props;
+    const {
+      searchField,
+      onSearchChange,
+      robots,
+      isPending,
+    } = this.props;
     const filterRobots = robots.filter(
       (robot) => {
         return robot.name
@@ -59,23 +71,38 @@ class App extends Component {
           .includes(searchField.toLowerCase());
       }
     );
-    if (robots.lengt) {
-      return <h1>Loading</h1>;
-    } else {
-      return (
-        <div className="tc">
-          <h1 className="f1">RoboFriends</h1>
-          <SearchBox
-            searchChange={onSearchChange}
-          />
-          <Scroll>
-            <ErrorBoundary>
-              <CardList robots={filterRobots} />
-            </ErrorBoundary>
-          </Scroll>
-        </div>
-      );
-    }
+    // if (robots.lengt) {
+    //   return <h1>Loading</h1>;
+    // } else {
+    //   return (
+    //     <div className="tc">
+    //       <h1 className="f1">RoboFriends</h1>
+    //       <SearchBox
+    //         searchChange={onSearchChange}
+    //       />
+    //       <Scroll>
+    //         <ErrorBoundary>
+    //           <CardList robots={filterRobots} />
+    //         </ErrorBoundary>
+    //       </Scroll>
+    //     </div>
+    //   );
+    // }
+    return isPending ? (
+      <h1>Loading</h1>
+    ) : (
+      <div className="tc">
+        <h1 className="f1">RoboFriends</h1>
+        <SearchBox
+          searchChange={onSearchChange}
+        />
+        <Scroll>
+          <ErrorBoundary>
+            <CardList robots={filterRobots} />
+          </ErrorBoundary>
+        </Scroll>
+      </div>
+    );
   }
 }
 
