@@ -25,7 +25,6 @@ export const searchMovies = (
 };
 
 const initialStateMovies = {
-  text: "",
   movies: [],
   loading: false,
   movie: [],

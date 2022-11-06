@@ -16,7 +16,7 @@ export const fetchMovies = () => (dispatch) => {
   dispatch({ type: FETCH_MOVIES_PENDING });
   fetch(
     // `https://www.omdbapi.com/?apikey=${APIKey}&i=${id}`
-    `https://www.omdbapi.com/?apikey=${APIKey}&i=
+    `https://www.omdbapi.com/?apikey=${APIKey}&s=
     iron`
   )
     .then((res) => res.json())
