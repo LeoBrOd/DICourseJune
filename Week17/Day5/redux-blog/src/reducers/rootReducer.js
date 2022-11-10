@@ -1,3 +1,5 @@
+import { DELETE_POST } from "../actions/postActions";
+
 const initState = {
   posts: [
     {
@@ -23,6 +25,21 @@ const initState = {
 const rootReducer = (
   state = initState,
   action
-) => {};
+) => {
+  switch (action.type) {
+    case DELETE_POST:
+      const postToShow = state.posts.filter(
+        (post) => {
+          return post.id !== action.id;
+        }
+      );
+      return {
+        ...state,
+        posts: postToShow,
+      };
+    default:
+      return state;
+  }
+};
 
 export default rootReducer;
